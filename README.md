@@ -19,3 +19,17 @@ mount the location for database.sql and files
 ```
 docker run -d -p 8081:8081 -e "OPENAI_API_KEY=YOUR_API_KEY" -v "./data:/app/.autogenstudio" ghcr.io/lludlow/autogen-studio
 ```
+
+## Docker Compose
+```
+version: "3"
+services:
+  autogen-studio:
+    image: ghcr.io/lludlow/autogen-studio
+    environment:
+      - OPENAI_API_KEY=YOUR_API_KEY
+    volumes:
+      - ./data:/app/.autogenstudio
+    ports:
+      - 8081:8081
+```
