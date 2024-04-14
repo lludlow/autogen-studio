@@ -1,5 +1,14 @@
 # Docker container for Autogen Studio
 
+<br/>
+
+<div align="center">
+
+[![GitHub last commit](https://img.shields.io/github/last-commit/lludlow/autogen-studio?color=purple&style=for-the-badge)](https://github.com/lludlow/autogen-studio/commits/master 'Commit History')
+[![Release](https://img.shields.io/github/v/release/lludlow/autogen-studio?style=for-the-badge)](https://github.com/lludlow/autogen-studio/releases 'Repo releases')\
+[![renovate](https://img.shields.io/badge/renovate-enabled-brightgreen?style=for-the-badge&logo=renovatebot&logoColor=white)](https://github.com/renovatebot/renovate)
+</div>
+
 ## Running the docker container
 
 ```
