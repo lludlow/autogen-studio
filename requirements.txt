@@ -1,0 +1,7 @@
+pydantic
+fastapi
+typer
+uvicorn
+arxiv
+pyautogen
+autogenstudio
