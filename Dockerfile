@@ -1,22 +1,29 @@
+# Use python 3.10 slim image as the base
 FROM python:3.10-slim
 
-# Copy application files and install dependencies
-COPY . /app
-RUN pip install --upgrade pip
+# Set the working directory in the container
 WORKDIR /app
-RUN pip install -r requirements.txt && pip install autogenstudio
 
-# Set the path
-ENV PATH="/home/app/.local/bin:${PATH}"
+# Create a new user and group 'autogen'
+RUN groupadd -r autogen && \
+    useradd -r -g autogen -d /app -s /bin/bash autogen
 
-# set python path
-ENV PYTHONPATH="/home/app/.local/bin:/app:${PYTHONPATH}"
+# Set the home directory for the autogen user
+ENV HOME=/app
 
-# add autogenstudio to the PATH
-ENV OPENAI_API_KEY="your-key-here"
+# Change to the autogen user
+USER autogen
 
-RUN autogenstudio version
+# Set up a virtual environment
+RUN python -m venv /app/venv
+ENV PATH="/app/venv/bin:$PATH"
 
+# Copy the requirements.txt file and install Python dependencies
+COPY --chown=autogen:autogen requirements.txt /app/
+RUN . /app/venv/bin/activate && pip install --no-cache-dir -r requirements.txt
+
+# Expose the port the app runs on
 EXPOSE 8081
 
-ENTRYPOINT [ "autogenstudio", "ui", "--host", "0.0.0.0", "--port", "8081"]
+# Set the default command to run when starting the container
+ENTRYPOINT ["autogenstudio", "ui", "--host", "0.0.0.0", "--port", "8081"]
