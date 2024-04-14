@@ -8,6 +8,9 @@ WORKDIR /app
 RUN groupadd -r autogen && \
     useradd -r -g autogen -d /app -s /bin/bash autogen
 
+# Change ownership of the /app directory to autogen
+RUN chown autogen:autogen /app
+
 # Set the home directory for the autogen user
 ENV HOME=/app
 
