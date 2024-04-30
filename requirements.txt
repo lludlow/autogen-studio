@@ -3,5 +3,5 @@ fastapi
 typer
 uvicorn
 arxiv
-pyautogen==0.2.24
+pyautogen==0.2.26
 autogenstudio==0.0.56
