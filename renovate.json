@@ -1,6 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
-  ]
+    "config:base"
+  ],
+  "gitAuthor": "lludlow <2191492+lludlow@users.noreply.github.com ",
+  "commitMessageAction": "Update",
+  "commitMessagePrefix": "chore(deps):",
+  "commitMessageTopic": "{{depName}}",
+  "labels": ["dependencies"],
+  "branchPrefix": "renovate/",
+  "packageRules": [
+    {
+      "updateTypes": ["minor", "patch"],
+      "automerge": true
+    }
+  ],
+  "timezone": "America/Detroit",
+  "schedule": ["after 10pm every weekday", "before 5am every weekday", "every weekend"]
 }
