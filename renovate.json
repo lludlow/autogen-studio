@@ -3,7 +3,7 @@
   "extends": [
     "config:base"
   ],
-  "gitAuthor": "lludlow <2191492+lludlow@users.noreply.github.com ",
+  "gitAuthor": "lludlow <2191492+lludlow@users.noreply.github.com>",
   "commitMessageAction": "Update",
   "commitMessagePrefix": "chore(deps):",
   "commitMessageTopic": "{{depName}}",
