@@ -4,4 +4,4 @@ typer
 uvicorn
 arxiv
 pyautogen==0.2.29
-autogenstudio==0.1.1
+autogenstudio==0.1.2
