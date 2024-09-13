@@ -17,13 +17,9 @@ ENV HOME=/app
 # Change to the autogen user
 USER autogen
 
-# Set up a virtual environment
-RUN python -m venv /app/venv
-ENV PATH="/app/venv/bin:$PATH"
-
 # Copy the requirements.txt file and install Python dependencies
 COPY --chown=autogen:autogen requirements.txt /app/
-RUN . /app/venv/bin/activate && pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose the port the app runs on
 EXPOSE 8081
