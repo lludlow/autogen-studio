@@ -25,4 +25,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8081
 
 # Set the default command to run when starting the container
-ENTRYPOINT ["autogenstudio", "ui", "--host", "0.0.0.0", "--port", "8081"]
+ENTRYPOINT ["/app/.local/bin/autogenstudio", "ui", "--host", "0.0.0.0", "--port", "8081"]
