@@ -4,4 +4,4 @@ typer
 uvicorn
 arxiv
 autogen==0.6.1
-autogenstudio==0.1.5
+autogenstudio==0.4.0.1
